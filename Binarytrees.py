@@ -48,3 +48,14 @@ class BinarySearchTreenode:
             elements += self.right.IOtraversal()
 
         return elements
+
+    def POtraversal(self):
+        elements = []
+        if self.length:
+            elements += self.left.POtraversal()
+        if self.right:
+            elements += self.right.POtraversal()
+
+        elements.append(self.data)
+
+        return elements
