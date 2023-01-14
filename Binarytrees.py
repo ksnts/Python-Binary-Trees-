@@ -36,3 +36,15 @@ class BinarySearchTreenode:
                 return self.right.search(val)
             else: 
                 return False
+
+    def IOtraversal(self):
+        elements = []
+        if self.left:
+            elements += self.left.IOtraversal()
+
+        elements.append(self.data)
+
+        if self.right:
+            elements += self.right.IOtraversal()
+
+        return elements
