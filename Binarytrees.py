@@ -49,6 +49,28 @@ class BinarySearchTreenode:
 
         return elements
 
+    def delete(self, val):
+        if val < self.data:
+            if self.left:
+                self.left = self.left.delete(val)
+        elif val > self.data:
+            if self.right:
+                self.right = self.right.delete(val)
+        
+        else:
+            if self.left is None and self.right is None:
+                return None
+            elif self.left is None:
+                return self.right
+            elif self.right is None:
+                return self.right
+
+            max_val = self.left.find_max()
+            self.data = max_val
+            self.left = self.left.delete(max_val)
+
+        return self
+
     def POtraversal(self):
         elements = []
         if self.left:
@@ -85,6 +107,7 @@ class BinarySearchTreenode:
         return self.data + left_sum + right_sum
 
 def build_tree(elements):
+    print("Building Binary Tree with your name:", elements)
     root = BinarySearchTreenode(elements[0])
 
     for i in range(1,len(elements)):
@@ -93,6 +116,9 @@ def build_tree(elements):
     return root
 
 if __name__ == '__main__':
+    letters_tree2 = build_tree(['J', 'O', 'H', 'N', 'K', 'Y', 'L', 'L', 'E', 'M', 'S', 'A', 'N', 'T', 'O', 'S'])
+    letters_tree2.delete('H')
+    print("After deleting H",letters_tree2.IOtraversal())
     
     letters = ['J', 'O', 'H', 'N', 'K', 'Y', 'L', 'L', 'E', 'M', 'S', 'A', 'N', 'T', 'O', 'S']
 
