@@ -119,14 +119,30 @@ if __name__ == '__main__':
     letters_tree2 = build_tree(['J', 'O', 'H', 'N', 'K', 'Y', 'L', 'L', 'E', 'M', 'S', 'A', 'N', 'T', 'O', 'S'])
     letters_tree2.delete('H')
     print("After deleting H",letters_tree2.IOtraversal())
+    print("\n")
+
+    letters_tree2 = build_tree(['J', 'O', 'H', 'N', 'K', 'Y', 'L', 'L', 'E', 'M', 'S', 'A', 'N', 'T', 'O', 'S'])
+    letters_tree2.delete('K')
+    print("After deleting K",letters_tree2.IOtraversal())
+    print("\n")
+
+    letters_tree2 = build_tree(['J', 'O', 'H', 'N', 'K', 'Y', 'L', 'L', 'E', 'M', 'S', 'A', 'N', 'T', 'O', 'S'])
+    letters_tree2.delete('O')
+    print("After deleting O",letters_tree2.IOtraversal())
+    print("\n")
+
     
     letters = ['J', 'O', 'H', 'N', 'K', 'Y', 'L', 'L', 'E', 'M', 'S', 'A', 'N', 'T', 'O', 'S']
 
     letters_tree = build_tree(letters)
     print("Full name:", letters)
+    print("\n")
     print("In-Order Traversal:", letters_tree.IOtraversal())
+    print("\n")
     print("Pre-Order Traversal:", letters_tree.PRtraversal())
+    print("\n")
     print("Post-Order Traversal:", letters_tree.POtraversal())
+    print("\n")
 
 
     
