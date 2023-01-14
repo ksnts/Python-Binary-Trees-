@@ -84,7 +84,23 @@ class BinarySearchTreenode:
         right_sum = self.right.calculate_sum() if self.right else 0 
         return self.data + left_sum + right_sum
 
+def build_tree(elements):
+    root = BinarySearchTreenode(elements[0])
 
+    for i in range(1,len(elements)):
+        root.add_child(elements[i])
+
+    return root
+
+if __name__ == '__main__':
+    
+    letters = ['J', 'O', 'H', 'N', 'K', 'Y', 'L', 'L', 'E', 'M', 'S', 'A', 'N', 'T', 'O', 'S']
+
+    letters_tree = build_tree(letters)
+    print("Full name:", letters)
+    print("In-Order Traversal:", letters_tree.IOtraversal())
+    print("Pre-Order Traversal:", letters_tree.PRtraversal())
+    print("Post-Order Traversal:", letters_tree.POtraversal())
 
 
     
